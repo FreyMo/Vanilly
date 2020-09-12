@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - '27017:27017'
+    volumes:
+      - ./.mongo:/data/db
+
+  mongo-express:
+    image: mongo-express
+    environment: 
+      - ME_CONFIG_MONGODB_SERVER=mongodb
+    ports: 
+      - 7000:8081
+    depends_on:
+      - mongodb
+
+  vanilly-server:
+    build:
+      context: ./Vanilly.Server
+    container_name: vanilly-server
+    ports: 
+      - '5000:5000'
+      - '5001:5001'
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Docker
+      - ASPNETCORE_URLS=http://+:5000
+      # ;https://+:5001
+    depends_on:
+      - mongodb

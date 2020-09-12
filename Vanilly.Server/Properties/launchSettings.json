@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "Vanilly.Server": {
+      "commandName": "Project"
+    }
+  }
+}
