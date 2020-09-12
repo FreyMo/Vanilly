@@ -38,7 +38,7 @@ services:
       target: dev
     container_name: vanilly-client
     volumes:
-      - ./:/app
+      - ./Vanilly.Client/src:/app/src
     ports:
       - '4200:4200'
     depends_on:
