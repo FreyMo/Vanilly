@@ -10,7 +10,7 @@ RUN npm install --no-optional
 
 COPY . .
 
-CMD ng serve
+CMD ng serve --host 0.0.0.0
 FROM dev as build
 
 RUN ng build --prod --outputPath=./dist/out
