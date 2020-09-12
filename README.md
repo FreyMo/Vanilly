@@ -18,16 +18,22 @@ That's it.
 
 ## Run it
 
-Just execute
+### Linux/MacOS
 
 ```shell
-./dockerize.sh
+./compose.sh
 ```
 
-and open your browser on
+### Windows
 
-* <http://localhost:5000/swagger> for the Web API
-* <http://localhost:4200> for the Angular App
-* <http://localhost:7000> for the Mongo Express UI
+```Powershell
+.\compose.ps1
+```
+
+Open your browser on
+
+* <http://localhost:5000/swagger> for the Web API,
+* <http://localhost:4200> for the Angular App and
+* <http://localhost:7000> for the Mongo Express UI.
 
 You can edit the ASP.NET Core Server and the Angular Client while they are running. They will both recompile on demand.
