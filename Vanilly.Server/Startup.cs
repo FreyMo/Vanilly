@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System;
+using System.Collections.Generic;
 using System.Security.Claims;
 using Vanilly.Server.Controllers;
 using Vanilly.Server.Models;
@@ -45,9 +46,9 @@ namespace Vanilly.Server
                             AuthorizationUrl = new Uri("https://localhost:5000/connect/authorize"),
                             TokenUrl = new Uri("https://localhost:5000/connect/token"),
                             Scopes = new Dictionary<string, string>
-            {
-                {"api1", "Demo API - full access"}
-            }
+                            {
+                                {"api1", "Demo API - full access"}
+                            }
                         }
                     }
                 });

@@ -11,9 +11,9 @@ services:
 
   mongo-express:
     image: mongo-express
-    environment: 
+    environment:
       - ME_CONFIG_MONGODB_SERVER=mongodb
-    ports: 
+    ports:
       - 7000:8081
     depends_on:
       - mongodb
@@ -22,7 +22,7 @@ services:
     build:
       context: ./Vanilly.Server
     container_name: vanilly-server
-    ports: 
+    ports:
       - '5000:5000'
       - '5001:5001'
     environment:
@@ -31,3 +31,16 @@ services:
       # ;https://+:5001
     depends_on:
       - mongodb
+
+  vanilly-client:
+    build:
+      context: ./Vanilly.Client
+      target: dev
+    container_name: vanilly-client
+    volumes:
+      - ./:/app
+    ports:
+      - '4200:4200'
+    depends_on:
+      - mongodb
+      - vanilly-server
