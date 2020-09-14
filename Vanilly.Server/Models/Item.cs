@@ -1,8 +1,5 @@
-﻿using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
-using System.Text.Json.Serialization;
 
 namespace Vanilly.Server.Models
 {
@@ -16,14 +13,5 @@ namespace Vanilly.Server.Models
 
         [Required]
         public DateTime DueDate { get; set; }
-    }
-
-    public class ItemsDatabaseSettings
-    {
-        public string ItemsCollectionName { get; set; }
-
-        public string ConnectionString { get; set; }
-
-        public string DatabaseName { get; set; }
     }
 }

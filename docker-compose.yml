@@ -30,9 +30,10 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Docker
       - ASPNETCORE_URLS=http://+:5000
-      # ;https://+:5001
     depends_on:
       - mongodb
+    volumes:
+      - ./Vanilly.Server:/src
 
   vanilly-client:
     build:
